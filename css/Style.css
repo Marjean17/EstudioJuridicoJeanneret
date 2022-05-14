@@ -1,0 +1,275 @@
+* {
+    Margin: 0;
+    padding: 0;
+    
+}
+
+@font-face {
+    font-family: "OldLondon";
+    src: url("../fonts/OldLondon.ttf");
+}
+
+body {
+    background-color: beige;
+    display: grid;
+    grid-template-rows: 12vh auto 10vh;
+    height:100%;
+}
+
+header {
+    position: sticky;
+    top: 0px;
+    background-color: beige;
+    z-index: 9999;
+}
+
+main{
+    margin: 0 1rem 0 1rem;
+}
+
+footer {
+    bottom: 0px;
+    margin-block-start: 1rem;
+    padding: 1rem;
+    justify-content: center;
+    background-color: rgba(118, 214, 238, 0.948);
+}
+
+
+.ulMenu {
+    display: grid;
+    grid-template-columns: repeat(5fr);
+    grid-template-rows: 1fr;
+    grid-template-areas: 'index areas staff actualidad contacto';
+    column-gap: 0.5rem;
+    row-gap: 0.5rem;
+    list-style: none;
+    align-items:center;
+    margin: auto;
+}
+
+.aMenu {
+    text-decoration: none;
+    padding: 0.25rem;
+    margin: 0.25rem;
+}
+
+.indexMenu{grid-area: 'index'}
+.areasMenu{grid-area: 'areas'}
+.staffMenu{grid-area: 'staff'}
+.actualidadMenu{grid-area: 'actualidad'}
+.contactoMenu{grid-area: 'contacto'}
+
+audio {
+    width: 9rem;
+    height: 1rem;
+    background-color: beige;
+}
+
+h2 {
+    padding: 2rem 0 2rem 0;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    position: relative;
+    justify-content: space-evenly;
+}
+
+
+/* Clases y etiquetas de la página INDEX */
+
+.nombreEstudio {
+    color: rgb(185, 160, 59);
+    margin: 2rem;
+    text-align: center;
+    white-space: pre-line;
+}
+
+.spanNombreEstudio {
+    font-family: "oldLondon";
+    font-size: 5rem;
+    line-height: 0.8;
+}
+
+.divIndex {
+
+    display: flex;
+    justify-content: center;
+    text-align: justify;
+}   
+
+.descripcionEstudio {
+    width: 35%;
+
+    margin: 10px;
+    text-align: justify;
+    font-style: italic;
+    white-space: pre-line;
+}
+
+.fotoBibliotecaIndex {
+    width: 65%;
+    margin: 10px;
+    /* grid-area: 1/8/20/20; */
+}
+
+
+/* Clases y etiquetas de la página AREAS DE PRACTICA */
+
+.tituloAreaDePractica {
+    padding-left: 20px;
+    color: beige;
+}
+
+.mainAreaDePractica {
+    background-image: url("../img/bibliotecaEstudio.jpg");
+    padding-bottom: 20px;
+
+}
+
+.areaDePractica {
+    background-color: rgba(192, 174, 85, 0.864);
+    margin: 20px;
+    padding: 15px 20px;
+    border: solid 1px rgb(58, 113, 144);
+    text-align: justify;
+}
+
+/* Clases y etiquetas de la página ACTUALIDAD */
+
+.articleActualidad {
+    text-align: justify;
+    height: 100vh;
+    align-items: center;
+}
+
+.tableActualidad {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: rgba(224, 210, 129, 0.884);
+    text-align: left;
+}
+
+.trHeadActualidad {
+    background-color: rgba(179, 176, 70, 0.448);
+}
+
+.trElementActualidad {
+    background-color: rgb(206, 198, 130);
+}
+
+.tdLinkActualidad {
+    text-decoration: none;
+    color: blue;
+}
+
+/* Clases y etiquetas de la página STAFF */
+
+.descripcionStaff {
+    margin-bottom: 20px;
+}
+
+/* .miembrosStaff{ 
+    display: flex;
+    width: auto;
+    height: auto;
+    background-color: rgba(118, 214, 238, 0.948);
+    margin: 20px 0px 20px 0px;
+    padding: 5px;} 
+        
+    .miembro {
+    padding: 5px;} */
+   
+
+    /* display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(8, 1fr); */
+
+
+.miembro {
+    padding: 5px;
+    display: flex;
+}
+
+.none {
+    color: rgba(118, 214, 238, 0.948);
+    z-index: 999;
+}
+
+.grillaStaff{
+    max-width: 350px;
+    display: grid;
+    grid-template-columns: repeat(4fr);
+    grid-template-rows: repeat(12fr);
+    
+}
+
+.socioTitulo{grid-area: 1/1/2/5;}
+.seniorTitulo{}
+.juniorTitulo{}
+.colaboradorTitulo{}
+
+.socio1{grid-area: 2/1/3/5;}
+.socio2{grid-area: 2/1/3/5;}
+.socio3{}
+.socio4{}
+
+.senior1{}
+.senior2{}
+.senior3{}
+.senior4{}
+
+.junior1{}
+.junior2{}
+.junior3{}
+.junior4{}
+
+.colaborador1{}
+.colaborador2{}
+.colaborador3{}
+.colaborador4{}
+
+
+/* Clases y etiquetas de la página CONTACTO */
+
+
+.descripcionContacto {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.contenedorFotosyForm {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.fotoFrenteEstudio {
+    width: 50vh;
+    margin: 5px;
+}
+
+.fotoRecepcionEstudio {
+    width: 50vh;
+    margin: 5px;
+}
+
+.divForm {
+    display: inline-block;
+    margin: 5px;
+}
+
+.formContacto {
+    width: 50vh;
+}
+
+.inputForm25 {
+    width: 50vh;
+}
+
+.inputForm50 {
+    width: 50vh;
+}
