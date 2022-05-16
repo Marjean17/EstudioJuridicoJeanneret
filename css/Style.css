@@ -9,6 +9,60 @@
     src: url("../fonts/OldLondon.ttf");
 }
 
+@media screen and (min-width: 767px){
+    main{background-color: rgba(128, 128, 128, 0.318);}
+
+    .mainAreaDePractica{
+        display: flex;   
+        flex-direction:row;      
+        flex-wrap: wrap; 
+        align-content: space-evenly;
+        }
+    .areaDePractica {
+        width: 250px; 
+        height:350px; 
+        }
+    .tituloAreaDePractica {
+        width: 250px; 
+        height:350px; 
+    }
+
+    .divIndex {
+
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        text-align:center;
+    }   
+
+    /* .descripcionEstudio {
+        width: auto;
+        }
+    
+    .fotoBibliotecaIndex {
+        width: auto;} */
+    
+
+    /* .grillaStaff{margin-left: 350px;} */
+
+
+    /* .socioTitulo{grid-area: 1/1/3/3;}
+    .socio1{grid-area: 3/1/5/2;}
+    .socio2{grid-area: 3/2/5/3;}
+    
+    .seniorTitulo{grid-area: 1/3/3/5;}
+    .senior1{grid-area: 3/3/5/4;}
+    .senior2{grid-area: 3/4/5/5;}
+    
+    .juniorTitulo{grid-area: 5/1/7/3;}
+    .junior1{grid-area: 7/1/9/2;}
+    .juniorNone{grid-area: 7/2/9/3;}
+    
+    .colaboradorTitulo{grid-area: 5/3/7/5;}
+    .colaborador1{grid-area: 7/3/9/4;}
+    .colaboradorNone{grid-area: 7/4/9/5;} */
+}
+
 body {
     background-color: beige;
     display: grid;
@@ -75,7 +129,6 @@ img {
     height: auto;
     border-radius: 10px;
     position: relative;
-    justify-content: space-evenly;
 }
 
 
@@ -103,7 +156,6 @@ img {
 
 .descripcionEstudio {
     width: 35%;
-
     margin: 10px;
     text-align: justify;
     font-style: italic;
@@ -113,19 +165,25 @@ img {
 .fotoBibliotecaIndex {
     width: 65%;
     margin: 10px;
-    /* grid-area: 1/8/20/20; */
 }
 
 
 /* Clases y etiquetas de la página AREAS DE PRACTICA */
 
 .tituloAreaDePractica {
-    padding-left: 20px;
-    color: beige;
+    color: rgba(192, 174, 85, 0.864);
+    background-color: rgba(0, 0, 0, 0.459);
+    margin: 20px;
+    padding: 15px 20px;
+    border: solid 1px none;
+    text-align: justify;
+    
 }
 
 .mainAreaDePractica {
-    background-image: url("../img/bibliotecaEstudio.jpg");
+    background-image: url("../img/bibliotecaEstudio.jpg"); 
+    background-repeat: no-repeat;
+    background-size: cover;
     padding-bottom: 20px;
 
 }
@@ -134,22 +192,31 @@ img {
     background-color: rgba(192, 174, 85, 0.864);
     margin: 20px;
     padding: 15px 20px;
-    border: solid 1px rgb(58, 113, 144);
+    border: solid 1px rgba(0, 0, 0, 0.685);
     text-align: justify;
 }
 
 /* Clases y etiquetas de la página ACTUALIDAD */
 
 .articleActualidad {
-    text-align: justify;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-content:flex-start;
     height: 100vh;
-    align-items: center;
+    /* justify-content:; */
+}
+
+.descripcionActualidad {
+    text-align:justify;
 }
 
 .tableActualidad {
-    margin-top: 20px;
+    margin-top: 10%;
     padding: 10px;
+    max-width: 800px;
     background-color: rgba(224, 210, 129, 0.884);
+    align-items:center;
     text-align: left;
 }
 
@@ -172,65 +239,39 @@ img {
     margin-bottom: 20px;
 }
 
-/* .miembrosStaff{ 
-    display: flex;
-    width: auto;
-    height: auto;
-    background-color: rgba(118, 214, 238, 0.948);
-    margin: 20px 0px 20px 0px;
-    padding: 5px;} 
-        
-    .miembro {
-    padding: 5px;} */
-   
-
-    /* display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(8, 1fr); */
-
-
-.miembro {
-    padding: 5px;
-    display: flex;
-}
-
-.none {
-    color: rgba(118, 214, 238, 0.948);
-    z-index: 999;
-}
-
 .grillaStaff{
-    max-width: 350px;
+    max-width: 100vh;
     display: grid;
     grid-template-columns: repeat(4fr);
-    grid-template-rows: repeat(12fr);
-    
+    grid-template-rows: repeat(8fr);
+
 }
 
 .socioTitulo{grid-area: 1/1/2/5;}
-.seniorTitulo{}
-.juniorTitulo{}
-.colaboradorTitulo{}
+.socio1{grid-area: 2/1/3/3;}
+.socio2{grid-area: 2/3/3/5;}
 
-.socio1{grid-area: 2/1/3/5;}
-.socio2{grid-area: 2/1/3/5;}
-.socio3{}
-.socio4{}
+.seniorTitulo{grid-area: 3/1/4/5;}
+.senior1{grid-area: 4/1/5/3;}
+.senior2{grid-area: 4/3/5/5;}
 
-.senior1{}
-.senior2{}
-.senior3{}
-.senior4{}
+.juniorTitulo{grid-area: 5/1/6/5;}
+.junior1{grid-area: 6/1/7/3;}
+.juniorNone{grid-area: 6/3/7/5;}
 
-.junior1{}
-.junior2{}
-.junior3{}
-.junior4{}
+.colaboradorTitulo{grid-area: 7/1/8/5;}
+.colaborador1{grid-area: 8/1/9/3;}
+.colaboradorNone{grid-area: 8/3/9/5;}
 
-.colaborador1{}
-.colaborador2{}
-.colaborador3{}
-.colaborador4{}
+
+.miembro {
+    
+    width:auto;
+    height: auto;
+    background-color: rgba(118, 214, 238, 0.948);
+    margin: 20px 0px 20px 0px;
+    padding: 5px;
+} 
 
 
 /* Clases y etiquetas de la página CONTACTO */
