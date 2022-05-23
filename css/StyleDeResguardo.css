@@ -1,0 +1,418 @@
+* {
+    Margin: 0;
+    padding: 0;
+
+}
+
+@font-face {
+    font-family: "OldLondon";
+    src: url("../fonts/OldLondon.ttf");
+}
+
+@media screen and (min-width: 767px) {
+    
+    @keyframes fondoCambiante{
+        0% {background: radial-gradient(rgb(211, 209, 108), beige)};
+        50%{background:color rgb(211, 209, 108),};
+        100%{background: radial-gradient(rgb(211, 209, 108), beige)};
+    }
+
+    .animacionFondoMain{
+        animation: fondoCambiante infinite 4s 0s;
+        animation-timing-function:ease-in-out;
+    }
+
+    .mainAreaDePractica {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: space-evenly;
+    }
+
+    .areaDePractica {
+        width: 250px;
+        height: 350px;
+    }
+
+    .tituloAreaDePractica {
+        width: 250px;
+        height: 350px;
+    }
+
+    .divIndex {
+
+        flex-direction: column;
+        align-items: center;
+    }
+
+/* 
+    .descripcionEstudio {
+        width: cover;
+        margin: 10px;
+
+    }
+
+    .fotoBibliotecaIndex {
+        width: 10%;
+        margin: 10px;
+    } */
+
+
+    /* .descripcionEstudio {
+        width: auto;
+        }
+    
+    .fotoBibliotecaIndex {
+        width: auto;} */
+
+
+    /* .grillaStaff{margin-left: 350px;} */
+
+
+    /* .socioTitulo{grid-area: 1/1/3/3;}
+    .socio1{grid-area: 3/1/5/2;}
+    .socio2{grid-area: 3/2/5/3;}
+    
+    .seniorTitulo{grid-area: 1/3/3/5;}
+    .senior1{grid-area: 3/3/5/4;}
+    .senior2{grid-area: 3/4/5/5;}
+    
+    .juniorTitulo{grid-area: 5/1/7/3;}
+    .junior1{grid-area: 7/1/9/2;}
+    .juniorNone{grid-area: 7/2/9/3;}
+    
+    .colaboradorTitulo{grid-area: 5/3/7/5;}
+    .colaborador1{grid-area: 7/3/9/4;}
+    .colaboradorNone{grid-area: 7/4/9/5;} */
+}
+
+body {
+    background-color: beige;
+    display: grid;
+    grid-template-rows: 12vh auto 10vh;
+    height: 100%;
+}
+
+header {
+    position: sticky;
+    top: 0px;
+    background-color: beige;
+    z-index: 9999;
+}
+
+main {
+    margin: 0 1rem 0 1rem;
+    background-color: beige;
+}
+
+footer {
+    bottom: 0px;
+    margin-block-start: 1rem;
+    padding: 1rem;
+    justify-content: center;
+    background-color: rgba(118, 214, 238, 0.948);
+}
+
+
+.ulMenu {
+    display: grid;
+    width: 95vh;
+    grid-template-columns: repeat(5fr);
+    grid-template-rows: 1fr;
+    grid-template-areas: 'index areas staff actualidad contacto';
+    column-gap: 0.7rem;
+    row-gap: 0.5rem;
+    list-style: none;
+    align-items: center;
+    margin: auto;
+    transition-duration: 0.5s;
+}
+
+.ulMenu:hover {
+    transform: scale(1.1);
+}
+
+.aMenu {
+    text-decoration: none;
+    color: black;
+    padding: 0.25rem;
+    margin: 0.25rem;
+    font-size: 0.9rem;
+    transition-duration: 1s;
+}
+
+
+.aMenu:hover {
+    transform: scale(1.1);
+    background-color: rgb(187, 172, 70);
+    border-radius: 10px;
+    color: white;
+
+}
+
+.imgMenu {
+    padding: 0.25rem;
+    margin: 0.25rem;
+    transition-duration: 1s;
+}
+
+.imgMenu:hover {
+    transform: scale(1.1);
+    border-radius: 0%;
+}
+
+
+.indexMenu {
+    grid-area: 'index'
+}
+
+.areasMenu {
+    grid-area: 'areas'
+}
+
+.staffMenu {
+    grid-area: 'staff'
+}
+
+.actualidadMenu {
+    grid-area: 'actualidad'
+}
+
+.contactoMenu {
+    grid-area: 'contacto'
+}
+
+audio {
+    width: 9rem;
+    height: 1rem;
+    background-color: beige;
+}
+
+h2 {
+    padding: 2rem 0 2rem 0;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    position: relative;
+}
+
+
+/* Clases y etiquetas de la página INDEX */
+
+.nombreEstudio {
+    color: rgb(185, 160, 59);
+    margin: 2rem;
+    text-align: center;
+    white-space: pre-line;
+}
+
+.spanNombreEstudio {
+    font-family: "oldLondon";
+    font-size: 5rem;
+    line-height: 0.8;
+}
+
+.divIndex {
+
+    display: flex;
+    justify-content: center;
+    text-align:left;
+    font-style: italic;
+}
+
+.descripcionEstudio {
+    width: 90%;
+    margin: 20px;
+}
+.descripcionEstudio2 {
+    width: 90%;
+    margin: 20px;
+}
+
+.fotoBibliotecaIndex {
+    width: 65%;
+    margin: 10px;
+}
+
+
+/* Clases y etiquetas de la página AREAS DE PRACTICA */
+
+.tituloAreaDePractica {
+    color: rgba(192, 174, 85, 0.864);
+    background-color: rgba(0, 0, 0, 0.459);
+    margin: 20px;
+    padding: 15px 20px;
+    border: solid 1px none;
+    text-align: justify;
+
+}
+
+.mainAreaDePractica {
+    background-image: url("../img/bibliotecaEstudio.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 20px;
+
+}
+
+.areaDePractica {
+    background-color: rgba(192, 174, 85, 0.864);
+    margin: 20px;
+    padding: 15px 20px;
+    border: solid 1px rgba(0, 0, 0, 0.685);
+    text-align: justify;
+}
+
+/* Clases y etiquetas de la página ACTUALIDAD */
+
+.articleActualidad {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    height: 100vh;
+    /* justify-content:; */
+}
+
+.descripcionActualidad {
+    text-align: justify;
+}
+
+.tableActualidad {
+    margin-top: 10%;
+    padding: 10px;
+    max-width: 800px;
+    background-color: rgba(224, 210, 129, 0.884);
+    align-items: center;
+    text-align: left;
+}
+
+.trHeadActualidad {
+    background-color: rgba(179, 176, 70, 0.448);
+}
+
+.trElementActualidad {
+    background-color: rgb(206, 198, 130);
+}
+
+.tdLinkActualidad {
+    text-decoration: none;
+    color: blue;
+}
+
+/* Clases y etiquetas de la página STAFF */
+
+.descripcionStaff {
+    margin-bottom: 20px;
+}
+
+.grillaStaff {
+    max-width: 100vh;
+    display: grid;
+    grid-template-columns: repeat(4fr);
+    grid-template-rows: repeat(8fr);
+
+}
+
+.socioTitulo {
+    grid-area: 1/1/2/5;
+}
+
+.socio1 {
+    grid-area: 2/1/3/3;
+}
+
+.socio2 {
+    grid-area: 2/3/3/5;
+}
+
+.seniorTitulo {
+    grid-area: 3/1/4/5;
+}
+
+.senior1 {
+    grid-area: 4/1/5/3;
+}
+
+.senior2 {
+    grid-area: 4/3/5/5;
+}
+
+.juniorTitulo {
+    grid-area: 5/1/6/5;
+}
+
+.junior1 {
+    grid-area: 6/1/7/3;
+}
+
+.juniorNone {
+    grid-area: 6/3/7/5;
+}
+
+.colaboradorTitulo {
+    grid-area: 7/1/8/5;
+}
+
+.colaborador1 {
+    grid-area: 8/1/9/3;
+}
+
+.colaboradorNone {
+    grid-area: 8/3/9/5;
+}
+
+
+.miembro {
+
+    width: auto;
+    height: auto;
+    background-color: rgba(118, 214, 238, 0.948);
+    margin: 20px 0px 20px 0px;
+    padding: 5px;
+}
+
+
+/* Clases y etiquetas de la página CONTACTO */
+
+
+.descripcionContacto {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.contenedorFotosyForm {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.fotoFrenteEstudio {
+    width: 50vh;
+    margin: 5px;
+}
+
+.fotoRecepcionEstudio {
+    width: 50vh;
+    margin: 5px;
+}
+
+.divForm {
+    display: inline-block;
+    margin: 5px;
+}
+
+.formContacto {
+    width: 50vh;
+}
+
+.inputForm25 {
+    width: 50vh;
+}
+
+.inputForm50 {
+    width: 50vh;
+}
