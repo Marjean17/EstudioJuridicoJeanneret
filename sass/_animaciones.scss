@@ -1,18 +1,18 @@
         @keyframes fondoCambiante {
             0% {
-                background: radial-gradient($colorSecundario, $colorPrimario)
+                background: radial-gradient(rgb(187, 172, 70),beige)
             }
 
             ;
 
             50% {
-                background: $colorPrimario
+                background: beige
             }
 
             ;
 
             100% {
-                background: radial-gradient($colorSecundario, $colorPrimario)
+                background: radial-gradient(rgb(187, 172, 70),beige)
             }
 
             ;

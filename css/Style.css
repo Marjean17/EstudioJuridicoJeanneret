@@ -55,7 +55,7 @@ body {
     /* Clases y etiquetas de la página INDEX */
     /* Clases y etiquetas de la página AREAS DE PRACTICA */
     /* Clases y etiquetas de la página ACTUALIDAD */
-    /* Clases y etiquetas de la página STAFF */
+    /* Clases y etiquetas de la página Equipo */
     /* Clases y etiquetas de la página CONTACTO */ }
     body main h2 {
       padding: 2rem 0 2rem 0; }
@@ -79,13 +79,13 @@ body {
       text-align: left;
       font-style: italic; }
     body main .descripcionEstudio {
-      width: 90vh;
+      width: 30vh;
       margin: 20px; }
     body main .descripcionEstudio2 {
-      width: 90vh;
+      width: 30vh;
       margin: 20px; }
     body main .fotoBibliotecaIndex {
-      width: 65%;
+      width: 65vh;
       margin: 10px; }
     body main .tituloAreaDePractica {
       color: #bbac46;
@@ -95,12 +95,12 @@ body {
       border: solid 1px none;
       text-align: justify; }
     body main .areaDePractica {
-      background-color: #bbac46;
       background-color: rgba(187, 172, 70, 0.5);
-      margin: 20px;
+      margin: 20px 40px 20px 20px;
       padding: 15px 20px;
       border: solid 1px rgba(0, 0, 0, 0.685);
-      text-align: justify; }
+      text-align: justify;
+      justify-content: center; }
     body main .articleActualidad {
       display: flex;
       flex-wrap: wrap;
@@ -114,7 +114,6 @@ body {
       margin-top: 5vh;
       padding: 10px;
       max-width: 100vh;
-      background-color: rgba(179, 176, 70, 0.448);
       align-items: center;
       text-align: left;
       box-shadow: 10px 10px 20px grey; }
@@ -127,7 +126,45 @@ body {
     body main .tdLinkActualidad:hover {
       box-shadow: 10px 10px 20px grey;
       border-radius: 3px; }
-    body main .descripcionStaff {
+    body main .grillaEquipo {
+      display: block; }
+      body main .grillaEquipo .card {
+        display: block;
+        margin: 10px auto;
+        max-width: 90%; }
+      body main .grillaEquipo #tituloSocios {
+        grid-area: tituloSocios; }
+      body main .grillaEquipo #socio1 {
+        grid-area: socio1; }
+      body main .grillaEquipo #socio2 {
+        grid-area: socio2; }
+      body main .grillaEquipo #tituloSenior {
+        grid-area: tituloSenior; }
+      body main .grillaEquipo #senior1 {
+        grid-area: senior1; }
+      body main .grillaEquipo #senior2 {
+        grid-area: senior2; }
+      body main .grillaEquipo #tituloJunior {
+        grid-area: tituloJunior; }
+      body main .grillaEquipo #junior1 {
+        grid-area: junior; }
+      body main .grillaEquipo #tituloColab {
+        grid-area: tituloColab; }
+      body main .grillaEquipo #colab1 {
+        grid-area: colab; }
+      @media (min-width: 768px) {
+        body main .grillaEquipo {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: 50px 50px auto auto 50px auto 50px auto;
+          grid-template-areas: "tituloSocios tituloSocios" "tituloSenior tituloSenior" "socio1 socio2" "senior1 senior2" "tituloJunior tituloJunior" "junior ." "tituloColab tituloColab" "colab . "; } }
+      @media (min-width: 992px) {
+        body main .grillaEquipo {
+          grid-template-columns: repeat(4, 1fr);
+          grid-template-rows: 50px 50px auto 50px auto 50px auto;
+          grid-template-areas: "tituloSocios tituloSocios tituloSocios tituloSocios" "tituloSenior tituloSenior tituloSenior tituloSenior" "socio1 socio2 senior1 senior2" "tituloJunior tituloJunior tituloJunior tituloJunior" "junior . . ." "tituloColab tituloColab tituloColab tituloColab" "colab . . . ";
+          gap: 20px; } }
+    body main .descripcionEquipo {
       margin-bottom: 20px; }
     body main .miembro {
       width: 50vh;
@@ -139,12 +176,8 @@ body {
       box-shadow: 20px 20px 35px grey; }
     body main .miembroFoto {
       width: 47vh;
-      margin: 5px;
-      height: auto; }
-    body main .paddingmiembros {
-      padding: 0 10px 10px 10px; }
-    body main .transparent {
-      color: rgba(0, 0, 0, 0); }
+      height: auto;
+      margin: 5px; }
     body main .descripcionContacto {
       margin: 20px;
       text-align: justify; }
@@ -163,16 +196,15 @@ body {
       margin: 5px; }
     body main .formContacto {
       width: 50vh; }
-    body main .inputForm25 {
+    body main .inputForm, body main .inputForm_fondoGris {
       width: 50vh; }
-    body main .inputForm50 {
-      width: 50vh; }
+    body main .inputForm_fondoGris {
+      background-color: #f2f5f5; }
   body footer {
     bottom: 0px;
     margin-block-start: 1rem;
     padding: 1rem;
-    justify-content: center;
-    background-color: rgba(179, 176, 70, 0.448); }
+    justify-content: center; }
   @media screen and (min-width: 767px) {
     body .animacionFondoMain {
       animation: fondoCambiante infinite 4s 0s;

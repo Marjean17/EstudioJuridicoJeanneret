@@ -6,14 +6,19 @@
 
 @import "sass/variables";
 @import "sass/animaciones";
+@import "sass/mixins";
 
 @font-face {
     font-family: "OldLondon";
     src: url("../fonts/OldLondon.ttf");
 }
 
+@function color($color-name){
+    @return map-get($mapaColores,$color-name)
+}
+
 body {
-    background-color: $colorPrimario;
+    background-color: color(Primario);
     display: grid;
     grid-template-rows: 12vh auto 10vh;
     height: 100vh;
@@ -21,9 +26,9 @@ body {
     header {
         position: sticky;
         top: 0px;
-        background-color: $colorPrimario;
+        background-color: color(Primario);
         z-index: 1020;
-
+           
         .aMenu {
             text-decoration: none;
             color: black;
@@ -32,10 +37,10 @@ body {
             font-size: 1rem;
             transition-duration: 1s;
         }
-
+        
         .aMenu:hover {
             transform: scale(1.1);
-            background-color: $colorSecundario;
+            background-color: color(Secundario);
             border-radius: 10px;
             color: white;
         }
@@ -45,24 +50,24 @@ body {
             margin: 0.25rem;
             transition-duration: 1s;
         }
-
+        
         .imgMenu:hover {
             transform: scale(1.1);
             border-radius: 0%;
         }
-
-
+        
+        
         audio {
-            width: 9rem;
-            height: 1rem;
-            background-color: $colorPrimario;
+            @include anchoxalto(9rem,1rem);
+            background-color: color(Primario);
         }
-
+        
     }
+    
 
     main {
         margin: 0 1rem 0 1rem;
-        background-color: $colorPrimario;
+        background-color: color(Primario);
         box-shadow: 10px 10px 10px grey;
 
         h2 {
@@ -70,8 +75,7 @@ body {
         }
         
         img {
-            width: 100vh;
-            height: auto;
+            @include anchoxalto(100vh,auto);
             border-radius: 10px;
             position: relative;
         }
@@ -79,7 +83,7 @@ body {
         /* Clases y etiquetas de la página INDEX */
 
         .nombreEstudio {
-            color: $colorSecundario;
+            color: color(Secundario);
             margin: 2rem;
             text-align: center;
             white-space: pre-line;
@@ -100,17 +104,17 @@ body {
         }
 
         .descripcionEstudio {
-            width: 90vh;
+            width: 30vh;
             margin: 20px;
         }
 
         .descripcionEstudio2 {
-            width: 90vh;
+            width: 30vh;
             margin: 20px;
         }
 
         .fotoBibliotecaIndex {
-            width: 65%;
+            width: 65vh;
             margin: 10px;
         }
 
@@ -118,7 +122,7 @@ body {
         /* Clases y etiquetas de la página AREAS DE PRACTICA */
 
         .tituloAreaDePractica {
-            color: $colorSecundario;
+            color: color(Secundario);
             background-color: rgba(0, 0, 0, 0.459);
             margin: 20px;
             padding: 15px 20px;
@@ -127,15 +131,14 @@ body {
 
         }
 
-        
-
+       
         .areaDePractica {
-            background-color: $colorSecundario;
-            background-color: transparentize($color: $colorSecundario, $amount: 0.5);
-            margin: 20px;
+            background-color: transparentize(color(Secundario), $amount: 0.5);
+            margin: 20px 40px 20px 20px;
             padding: 15px 20px;
             border: solid 1px rgba(0, 0, 0, 0.685);
             text-align: justify;
+            justify-content:center;
         }
 
         /* Clases y etiquetas de la página ACTUALIDAD */
@@ -157,17 +160,19 @@ body {
             margin-top: 5vh;
             padding: 10px;
             max-width: 100vh;
-            background-color: $colorTerciario;
+            background-color: color(terciario);
             align-items: center;
             text-align: left;
             box-shadow: 10px 10px 20px grey;
         }
 
-        .paresDistintos tr:nth-child(odd) {background-color: azure;}
+        .paresDistintos tr:nth-child(odd) {
+            background-color: azure;
+        }
 
         .tdLinkActualidad {
             text-decoration: none;
-            color: $colorLinks;
+            color: color(Links);
             font-size: 1rem;
         
         }
@@ -177,16 +182,97 @@ body {
             border-radius: 3px;
         }
 
-        /* Clases y etiquetas de la página STAFF */
+        /* Clases y etiquetas de la página Equipo */
 
-        .descripcionStaff {
+        .grillaEquipo {
+
+            display: block;
+                    
+        .card{
+            display: block;
+            margin:10px auto;
+            max-width: 90%;
+        
+        }
+
+            #tituloSocios {
+                grid-area: tituloSocios;
+            }
+
+            #socio1 {
+                grid-area: socio1;
+            }
+
+            #socio2 {
+                grid-area: socio2;
+            }
+
+            #tituloSenior {
+                grid-area: tituloSenior;
+            }
+
+            #senior1 {
+                grid-area: senior1;
+            }
+
+            #senior2 {
+                grid-area: senior2;
+            }
+
+            #tituloJunior {
+                grid-area: tituloJunior;
+            }
+
+            #junior1 {
+                grid-area: junior;
+            }
+
+            #tituloColab {
+                grid-area: tituloColab;
+            }
+
+            #colab1 {
+                grid-area: colab;
+            }
+
+ 
+            @media(min-width:768px) {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: 50px 50px auto auto 50px auto 50px auto;
+                grid-template-areas: "tituloSocios tituloSocios"
+                    "tituloSenior tituloSenior"
+                    "socio1 socio2"
+                    "senior1 senior2"
+                    "tituloJunior tituloJunior"
+                    "junior ."
+                    "tituloColab tituloColab"
+                    "colab . ";
+            }
+
+            @media (min-width:992px) {
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: 50px 50px auto 50px auto 50px auto;
+                grid-template-areas: "tituloSocios tituloSocios tituloSocios tituloSocios"
+                    "tituloSenior tituloSenior tituloSenior tituloSenior"
+                    "socio1 socio2 senior1 senior2"
+                    "tituloJunior tituloJunior tituloJunior tituloJunior"
+                    "junior . . ."
+                    "tituloColab tituloColab tituloColab tituloColab"
+                    "colab . . . ";
+                gap: 20px;
+            }
+        }
+
+
+        .descripcionEquipo {
             margin-bottom: 20px;
         } 
 
+
         .miembro {
-        width: 50vh;
-            height: auto;
-            background-color: $colorFondoBox;
+            @include anchoxalto(50vh,auto);
+            background-color: color(FondoBox);
             margin: 20px 0px 20px 0px;
             padding: 5px;
             text-align: justify;
@@ -196,20 +282,10 @@ body {
 
 
         .miembroFoto { 
-            width: 47vh;
+            @include anchoxalto(47vh,auto);
             margin: 5px;
-            height: auto;
         }
 
-        .paddingmiembros {padding: 0 10px 10px 10px}
-
-
-        .transparent{
-            color: $colorTransparent;
-        }
-
-        // .bottonCero {no se que propiedad darle para que bajen los botones en el staff... buahhh
-        // }
 
         /* Clases y etiquetas de la página CONTACTO */
 
@@ -244,30 +320,23 @@ body {
             width: 50vh;
         }
 
-        .inputForm25 {
+        .inputForm {
             width: 50vh;
         }
 
-        .inputForm50 {
-            width: 50vh;
+        .inputForm_fondoGris {
+            @extend .inputForm;
+            background-color:rgb(242, 245, 245);
         }
 
     }
-
-// .mainAreaDePractica {
-//         background-image: url("../img/bibliotecaEstudio.jpg");
-//         background-repeat: no-repeat;
-//         background-size: cover;
-//         padding-bottom: 20px;}
-       
-
 
     footer {
         bottom: 0px;
         margin-block-start: 1rem;
         padding: 1rem;
         justify-content: center;
-        background-color: $colorTerciario;
+        background-color: color(terciario);
     }
 
 
@@ -284,17 +353,15 @@ body {
             flex-direction: row;
             flex-wrap: wrap;
             align-content: space-evenly;
-                    }
+        }
 
         .areaDePractica {
-            width: 300px;
-            height: 500px;
+            @include anchoxalto(300px,500px);
             box-shadow: 10px 10px 10px grey;
         }
 
         .tituloAreaDePractica {
-            width: 300px;
-            height: 63px;
+            @include anchoxalto(300px,63px);
         }
 
         .divIndex {
