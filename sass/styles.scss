@@ -103,14 +103,16 @@ body {
             font-style: italic;
         }
 
-        .descripcionEstudio {
-            width: 30vh;
+        .descripcionEstudio1 {
+            width: 35vh;
             margin: 20px;
+            text-align: justify;
         }
 
         .descripcionEstudio2 {
-            width: 30vh;
+            width: 35vh;
             margin: 20px;
+            text-align: justify;
         }
 
         .fotoBibliotecaIndex {
@@ -131,7 +133,6 @@ body {
 
         }
 
-       
         .areaDePractica {
             background-color: transparentize(color(Secundario), $amount: 0.5);
             margin: 20px 40px 20px 20px;
@@ -141,6 +142,27 @@ body {
             justify-content:center;
         }
 
+
+        @media screen and (min-width: 767px) {    
+        
+            .mainAreaDePractica {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-content: space-evenly;
+            }
+    
+            .areaDePractica {
+                @include anchoxalto(300px,500px);
+                box-shadow: 10px 10px 10px grey;
+            }
+    
+            .tituloAreaDePractica {
+                @include anchoxalto(300px,63px);
+            }
+   
+        }
+
         /* Clases y etiquetas de la página ACTUALIDAD */
 
         .articleActualidad {
@@ -148,7 +170,7 @@ body {
             flex-wrap: wrap;
             justify-content: center;
             align-content: flex-start;
-            height: 100vh;
+            height: 900px;
         }
 
         .descripcionActualidad {
@@ -159,7 +181,7 @@ body {
         .tableActualidad {
             margin-top: 5vh;
             padding: 10px;
-            max-width: 100vh;
+            max-width: 90vh;
             background-color: color(terciario);
             align-items: center;
             text-align: left;
@@ -197,6 +219,7 @@ body {
 
             #tituloSocios {
                 grid-area: tituloSocios;
+                padding:20px 0 0 20px;
             }
 
             #socio1 {
@@ -209,6 +232,7 @@ body {
 
             #tituloSenior {
                 grid-area: tituloSenior;
+                padding:20px 0 0 20px;
             }
 
             #senior1 {
@@ -221,6 +245,7 @@ body {
 
             #tituloJunior {
                 grid-area: tituloJunior;
+                padding:20px 0 0 20px;
             }
 
             #junior1 {
@@ -229,6 +254,7 @@ body {
 
             #tituloColab {
                 grid-area: tituloColab;
+                padding:20px 0 0 20px;
             }
 
             #colab1 {
@@ -236,13 +262,13 @@ body {
             }
 
  
-            @media(min-width:768px) {
+            @media(min-width:200px) {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: 50px 50px auto auto 50px auto 50px auto;
+                grid-template-rows: 50px auto 50px auto 50px auto 50px auto;
                 grid-template-areas: "tituloSocios tituloSocios"
-                    "tituloSenior tituloSenior"
                     "socio1 socio2"
+                    "tituloSenior tituloSenior"
                     "senior1 senior2"
                     "tituloJunior tituloJunior"
                     "junior ."
@@ -250,17 +276,14 @@ body {
                     "colab . ";
             }
 
-            @media (min-width:992px) {
+            @media (min-width:767px) {
                 grid-template-columns: repeat(4, 1fr);
-                grid-template-rows: 50px 50px auto 50px auto 50px auto;
-                grid-template-areas: "tituloSocios tituloSocios tituloSocios tituloSocios"
-                    "tituloSenior tituloSenior tituloSenior tituloSenior"
+                grid-template-rows: 50px auto 50px auto;
+                grid-template-areas: "tituloSocios tituloSocios tituloSenior tituloSenior"
                     "socio1 socio2 senior1 senior2"
-                    "tituloJunior tituloJunior tituloJunior tituloJunior"
-                    "junior . . ."
-                    "tituloColab tituloColab tituloColab tituloColab"
-                    "colab . . . ";
-                gap: 20px;
+                    "tituloJunior tituloJunior tituloColab tituloColab"
+                    "junior . colab .";
+                gap: 5px;
             }
         }
 
@@ -277,15 +300,30 @@ body {
             padding: 5px;
             text-align: justify;
             box-shadow: 20px 20px 35px grey;
-            
+           
         }
 
 
         .miembroFoto { 
-            @include anchoxalto(47vh,auto);
+            @include anchoxalto(96%,auto);
             margin: 5px;
         }
 
+        .fondoCard{
+            background: none;
+            border-style: none;
+        }
+
+        .fondoCard_footer {
+            @extend .fondoCard;
+
+            // aca no se encuentro que propiedad agregar 
+            // para que todos los footer queden alineados con 
+            // el final de la tarjeta
+        }
+
+
+        }
 
         /* Clases y etiquetas de la página CONTACTO */
 
@@ -329,7 +367,7 @@ body {
             background-color:rgb(242, 245, 245);
         }
 
-    }
+    
 
     footer {
         bottom: 0px;
@@ -346,28 +384,6 @@ body {
         .animacionFondoMain {
             animation: fondoCambiante infinite 4s 0s;
             animation-timing-function: ease-in-out;
-        }
-
-        .mainAreaDePractica {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            align-content: space-evenly;
-        }
-
-        .areaDePractica {
-            @include anchoxalto(300px,500px);
-            box-shadow: 10px 10px 10px grey;
-        }
-
-        .tituloAreaDePractica {
-            @include anchoxalto(300px,63px);
-        }
-
-        .divIndex {
-
-            flex-direction: column;
-            align-items: center;
         }
 
     }
