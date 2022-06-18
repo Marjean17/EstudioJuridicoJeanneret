@@ -294,7 +294,7 @@ body {
 
 
         .miembro {
-            @include anchoxalto(50vh,auto);
+            @include anchoxalto(auto,auto);
             background-color: color(FondoBox);
             margin: 20px 0px 20px 0px;
             padding: 5px;

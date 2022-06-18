@@ -186,7 +186,7 @@ body {
     body main .descripcionEquipo {
       margin-bottom: 20px; }
     body main .miembro {
-      width: 50vh;
+      width: auto;
       height: auto;
       background-color: rgba(118, 214, 238, 0.948);
       margin: 20px 0px 20px 0px;
