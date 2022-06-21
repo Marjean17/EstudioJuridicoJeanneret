@@ -13,22 +13,28 @@
     src: url("../fonts/OldLondon.ttf");
 }
 
-@function color($color-name){
-    @return map-get($mapaColores,$color-name)
+@function color($color-name) {
+    @return map-get($mapaColores, $color-name)
 }
 
 body {
     background-color: color(Primario);
     display: grid;
-    grid-template-rows: 12vh auto 10vh;
+    grid-template-rows: 23vh auto 10vh;
     height: 100vh;
+    font-size: small;
+
+    @media screen and (min-width: 767px) {
+        font-size: medium;
+        grid-template-rows: 14vh auto 10vh;
+    }
 
     header {
         position: sticky;
         top: 0px;
         background-color: color(Primario);
         z-index: 1020;
-           
+
         .aMenu {
             text-decoration: none;
             color: black;
@@ -37,7 +43,7 @@ body {
             font-size: 1rem;
             transition-duration: 1s;
         }
-        
+
         .aMenu:hover {
             transform: scale(1.1);
             background-color: color(Secundario);
@@ -50,20 +56,22 @@ body {
             margin: 0.25rem;
             transition-duration: 1s;
         }
-        
+
         .imgMenu:hover {
             transform: scale(1.1);
             border-radius: 0%;
         }
-        
-        
+
+
         audio {
-            @include anchoxalto(9rem,1rem);
+            @include anchoxalto(9rem, 1rem);
             background-color: color(Primario);
         }
-        
+
+        @media screen and (max-width: 350px) {}
+
     }
-    
+
 
     main {
         margin: 0 1rem 0 1rem;
@@ -73,9 +81,9 @@ body {
         h2 {
             padding: 2rem 0 2rem 0;
         }
-        
+
         img {
-            @include anchoxalto(100vh,auto);
+            @include anchoxalto(auto, auto);
             border-radius: 10px;
             position: relative;
         }
@@ -97,27 +105,66 @@ body {
 
         .divIndex {
 
-            display: flex;
-            justify-content: center;
-            text-align: left;
-            font-style: italic;
-        }
+            display: grid;
+            grid-template-columns: 35% 65%;
+            grid-template-rows: repeat (2, 1fr);
+            grid-template-areas:
+                "Descripción1 FotoIndex"
+                "Descripción2 FotoIndex";
+            gap: 20px;
 
-        .descripcionEstudio1 {
-            width: 35vh;
-            margin: 20px;
-            text-align: justify;
-        }
+            #descripcionEstudio1 {
+                grid-area: Descripción1;
+                margin: 10px;
+                text-align: justify;
+                font-style: italic;
+            }
 
-        .descripcionEstudio2 {
-            width: 35vh;
-            margin: 20px;
-            text-align: justify;
-        }
+            #descripcionEstudio2 {
+                grid-area: Descripción2;
+                margin: 10px;
+                text-align: justify;
+                font-style: italic;
+            }
 
-        .fotoBibliotecaIndex {
-            width: 65vh;
-            margin: 10px;
+            #fotoBibliotecaIndex {
+                grid-area: FotoIndex;
+                width: 80%;
+                height: 100vh;
+                margin: 10px;
+            }
+
+            @media (min-width:767px) {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto;
+                grid-template-areas:
+                    "Descripción1"
+                    "Descripción2"
+                    "FotoIndex";
+                gap: 20px;
+                height: auto;
+                justify-items: center;
+
+                #descripcionEstudio1 {
+                    grid-area: Descripción1;
+
+                    text-align: justify;
+                }
+
+                #descripcionEstudio2 {
+                    grid-area: Descripción2;
+                    margin: 20px;
+                    text-align: justify;
+                }
+
+                #fotoBibliotecaIndex {
+                    grid-area: FotoIndex;
+                    width: 90%;
+                    height: 100vh;
+                    margin: 10px;
+                }
+            }
+
         }
 
 
@@ -139,28 +186,30 @@ body {
             padding: 15px 20px;
             border: solid 1px rgba(0, 0, 0, 0.685);
             text-align: justify;
-            justify-content:center;
+            justify-content: center;
+            font-size: x-small;
         }
 
 
-        @media screen and (min-width: 767px) {    
-        
+        @media screen and (min-width: 767px) {
+
             .mainAreaDePractica {
                 display: flex;
                 flex-direction: row;
                 flex-wrap: wrap;
                 align-content: space-evenly;
             }
-    
+
             .areaDePractica {
-                @include anchoxalto(300px,500px);
+                @include anchoxalto(300px, 500px);
                 box-shadow: 10px 10px 10px grey;
+                font-size: medium;
             }
-    
+
             .tituloAreaDePractica {
-                @include anchoxalto(300px,63px);
+                @include anchoxalto(300px, 63px);
             }
-   
+
         }
 
         /* Clases y etiquetas de la página ACTUALIDAD */
@@ -196,7 +245,7 @@ body {
             text-decoration: none;
             color: color(Links);
             font-size: 1rem;
-        
+
         }
 
         .tdLinkActualidad:hover {
@@ -209,17 +258,17 @@ body {
         .grillaEquipo {
 
             display: block;
-                    
-        .card{
-            display: block;
-            margin:10px auto;
-            max-width: 90%;
-        
-        }
+
+            .card {
+                display: block;
+                margin: 10px auto;
+                max-width: 90%;
+
+            }
 
             #tituloSocios {
                 grid-area: tituloSocios;
-                padding:20px 0 0 20px;
+                padding: 20px 0 0 20px;
             }
 
             #socio1 {
@@ -232,7 +281,7 @@ body {
 
             #tituloSenior {
                 grid-area: tituloSenior;
-                padding:20px 0 0 20px;
+                padding: 20px 0 0 20px;
             }
 
             #senior1 {
@@ -245,7 +294,7 @@ body {
 
             #tituloJunior {
                 grid-area: tituloJunior;
-                padding:20px 0 0 20px;
+                padding: 20px 0 0 20px;
             }
 
             #junior1 {
@@ -254,27 +303,24 @@ body {
 
             #tituloColab {
                 grid-area: tituloColab;
-                padding:20px 0 0 20px;
+                padding: 20px 0 0 20px;
             }
 
             #colab1 {
                 grid-area: colab;
             }
 
- 
-            @media(min-width:200px) {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: 50px auto 50px auto 50px auto 50px auto;
-                grid-template-areas: "tituloSocios tituloSocios"
-                    "socio1 socio2"
-                    "tituloSenior tituloSenior"
-                    "senior1 senior2"
-                    "tituloJunior tituloJunior"
-                    "junior ."
-                    "tituloColab tituloColab"
-                    "colab . ";
-            }
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 50px auto 50px auto 50px auto 50px auto;
+            grid-template-areas: "tituloSocios tituloSocios"
+            "socio1 socio2"
+            "tituloSenior tituloSenior"
+            "senior1 senior2"
+            "tituloJunior tituloJunior"
+            "junior ."
+            "tituloColab tituloColab"
+            "colab . ";
 
             @media (min-width:767px) {
                 grid-template-columns: repeat(4, 1fr);
@@ -289,27 +335,28 @@ body {
 
 
         .descripcionEquipo {
-            margin-bottom: 20px;
-        } 
+            margin: 20px;
+            text-align: justify
+        }
 
 
         .miembro {
-            @include anchoxalto(auto,auto);
+            @include anchoxalto(auto, auto);
             background-color: color(FondoBox);
             margin: 20px 0px 20px 0px;
             padding: 5px;
             text-align: justify;
             box-shadow: 20px 20px 35px grey;
-           
+
         }
 
 
-        .miembroFoto { 
-            @include anchoxalto(96%,auto);
+        .miembroFoto {
+            @include anchoxalto(96%, auto);
             margin: 5px;
         }
 
-        .fondoCard{
+        .fondoCard {
             background: none;
             border-style: none;
         }
@@ -317,57 +364,59 @@ body {
         .fondoCard_footer {
             @extend .fondoCard;
 
+
+
             // aca no se encuentro que propiedad agregar 
             // para que todos los footer queden alineados con 
             // el final de la tarjeta
         }
 
 
-        }
+    }
 
-        /* Clases y etiquetas de la página CONTACTO */
+    /* Clases y etiquetas de la página CONTACTO */
 
 
-        .descripcionContacto {
-            margin: 20px;
-            text-align: justify;
-        }
+    .descripcionContacto {
+        margin: 20px;
+        text-align: justify;
+    }
 
-        .contenedorFotosyForm {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
+    .contenedorFotosyForm {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
-        .fotoFrenteEstudio {
-            width: 50vh;
-            margin: 5px;
-        }
+    .fotoFrenteEstudio {
+        width: 50vh;
+        margin: 5px;
+    }
 
-        .fotoRecepcionEstudio {
-            width: 50vh;
-            margin: 5px;
-        }
+    .fotoRecepcionEstudio {
+        width: 50vh;
+        margin: 5px;
+    }
 
-        .divForm {
-            display: inline-block;
-            margin: 5px;
-        }
+    .divForm {
+        display: inline-block;
+        margin: 5px;
+    }
 
-        .formContacto {
-            width: 50vh;
-        }
+    .formContacto {
+        width: 50vh;
+    }
 
-        .inputForm {
-            width: 50vh;
-        }
+    .inputForm {
+        width: 50vh;
+        margin: 2px;
+    }
 
-        .inputForm_fondoGris {
-            @extend .inputForm;
-            background-color:rgb(242, 245, 245);
-        }
+    .inputForm_fondoGris {
+        @extend .inputForm;
+        background-color: rgb(242, 245, 245);
+    }
 
-    
 
     footer {
         bottom: 0px;
