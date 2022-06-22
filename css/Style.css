@@ -119,20 +119,25 @@ body {
             width: 90%;
             height: 100vh;
             margin: 10px; } }
-    body main .tituloAreaDePractica {
+    body main .tituloAreasDePractica {
       color: #bbac46;
       background-color: rgba(0, 0, 0, 0.459);
       margin: 20px;
       padding: 15px 20px;
       border: solid 1px none;
       text-align: justify; }
+    body main .tituloDeAreaDePractica {
+      height: 90px;
+      text-align: start; }
+    body main .descripcionDeAreaDePractica {
+      margin-top: 30px; }
     body main .areaDePractica {
       background-color: rgba(187, 172, 70, 0.5);
       margin: 20px 40px 20px 20px;
       padding: 15px 20px;
       border: solid 1px rgba(0, 0, 0, 0.685);
       text-align: justify;
-      justify-content: center;
+      justify-content: space-between;
       font-size: x-small; }
     @media screen and (min-width: 767px) {
       body main .mainAreaDePractica {
@@ -228,9 +233,14 @@ body {
       width: 96%;
       height: auto;
       margin: 5px; }
+    body main .paddingCardBody {
+      padding-bottom: 40px; }
     body main .fondoCard, body main .fondoCard_footer {
       background: none;
-      border-style: none; }
+      border-style: none;
+      align-self: flex-end; }
+    body main .fondoCard_footer {
+      align-self: flex-end; }
   body .descripcionContacto {
     margin: 20px;
     text-align: justify; }
