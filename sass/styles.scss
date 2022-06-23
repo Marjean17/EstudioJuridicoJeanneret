@@ -78,19 +78,37 @@ body {
             padding: 15px 20px;
             border: solid 1px none;
             text-align: justify;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .redesContainer {
+            display: flex;
+            flex-direction: row;
 
         }
 
-    }
+        .redes {
+            background-color: none;
+            width: 35px;
+            height: 35px;
+            align-self: center;
+            margin-right: 20px;
+            transition: 1s;
 
+        }
+
+        .redes:hover {
+            transform: scale(1.2);
+
+        }
+    }
 
     main {
         margin: 3rem 1rem 1rem 0;
         background-color: color(Terciario);
         box-shadow: 10px 10px 10px grey;
-
-        
-
 
 
         img {
@@ -258,7 +276,7 @@ body {
             text-decoration: none;
             color: color(Primario);
             background-color: color(Terciario);
-            padding:1px;
+            padding: 1px;
             margin: 5px;
             font-size: 1rem;
 
@@ -269,27 +287,27 @@ body {
             background-color: color(Primario);
             color: black;
         }
-        
-        
-        
+
+
+
         /* Clases y etiquetas de la página Equipo */
-        
+
         .grillaEquipo {
-            
+
             display: block;
-            
+
             .card {
                 display: block;
                 margin: 10px auto;
                 max-width: 90%;
-                
+
             }
-            
+
             #tituloSocios {
                 grid-area: tituloSocios;
                 padding: 20px 0 0 20px;
             }
-            
+
             #socio1 {
                 grid-area: socio1;
             }
@@ -302,7 +320,7 @@ body {
                 grid-area: tituloSenior;
                 padding: 20px 0 0 20px;
             }
-            
+
             #senior1 {
                 grid-area: senior1;
             }
@@ -310,25 +328,25 @@ body {
             #senior2 {
                 grid-area: senior2;
             }
-            
+
             #tituloJunior {
                 grid-area: tituloJunior;
                 padding: 20px 0 0 20px;
             }
-            
+
             #junior1 {
                 grid-area: junior;
             }
-            
+
             #tituloColab {
                 grid-area: tituloColab;
                 padding: 20px 0 0 20px;
             }
-            
+
             #colab1 {
                 grid-area: colab;
             }
-            
+
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: 50px auto 50px auto 50px auto 50px auto;
@@ -340,26 +358,26 @@ body {
             "junior ."
             "tituloColab tituloColab"
             "colab . ";
-            
+
             @media (min-width:767px) {
                 grid-template-columns: repeat(4, 1fr);
                 grid-template-rows: 50px auto 50px auto;
                 grid-template-areas: "tituloSocios tituloSocios tituloSenior tituloSenior"
-                "socio1 socio2 senior1 senior2"
-                "tituloJunior tituloJunior tituloColab tituloColab"
+                    "socio1 socio2 senior1 senior2"
+                    "tituloJunior tituloJunior tituloColab tituloColab"
                     "junior . colab .";
                 gap: 5px;
             }
         }
 
-        
+
         .descripcionEquipo {
             margin: 60px 20px 0 20px;
             text-align: justify;
             color: color(Primario);
         }
 
-        
+
         .miembro {
             @include anchoxalto(auto, auto);
             background-color: color(Secundario);
@@ -368,85 +386,85 @@ body {
             color: color(Primario);
             text-align: justify;
             box-shadow: 5px 5px 10px color(Primario);
-            
+
         }
-        
+
         .miembroFoto {
             @include anchoxalto(96%, auto);
             margin: 5px;
         }
-        
+
         .paddingCardBody {
             padding-bottom: 70px;
         }
-        
+
         .fondoCard {
             background: none;
             border-style: none;
             align-self: flex-end
         }
-        
+
         .fondoCard_footer {
             @extend .fondoCard;
             align-self: flex-end;
 
         }
 
-        
-        
-        
-    /* Clases y etiquetas de la página CONTACTO */
 
 
-    .descripcionContacto {
-        margin: 60px 20px 20px 20px;
-        text-align: justify;
-        color:color(Primario);
-    }
-    
-    .contenedorFotosyForm {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .fotoFrenteEstudio {
-        width: 50vh;
-        margin: 5px;
-        border: solid 1px color(Secundario);
-    }
-    
-    .fotoRecepcionEstudio {
-        width: 50vh;
-        margin: 5px;
-        border: solid 1px color(Secundario);
-    }
-    
-    .divForm {
-        display: inline-block;
-        margin: 5px;
-        padding: 20px;
-        border-radius: 15px;
-        background-color: color(Secundario);
-        
+
+        /* Clases y etiquetas de la página CONTACTO */
+
+
+        .descripcionContacto {
+            margin: 60px 20px 20px 20px;
+            text-align: justify;
+            color: color(Primario);
+        }
+
+        .contenedorFotosyForm {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .fotoFrenteEstudio {
+            width: 50vh;
+            margin: 5px;
+            border: solid 1px color(Secundario);
+        }
+
+        .fotoRecepcionEstudio {
+            width: 50vh;
+            margin: 5px;
+            border: solid 1px color(Secundario);
+        }
+
+        .divForm {
+            display: inline-block;
+            margin: 5px;
+            padding: 20px;
+            border-radius: 15px;
+            background-color: color(Secundario);
+
+        }
+
+        .formContacto {
+            width: 50vh;
+        }
+
+        .inputForm {
+            width: 50vh;
+            margin: 2px;
+        }
+
+        .inputForm_fondoGris {
+            @extend .inputForm;
+            background-color: rgb(242, 245, 245);
+        }
+
     }
 
-    .formContacto {
-        width: 50vh;
-    }
-
-    .inputForm {
-        width: 50vh;
-        margin: 2px;
-    }
-    
-    .inputForm_fondoGris {
-        @extend .inputForm;
-        background-color: rgb(242, 245, 245);
-    }
-    
-}
-    
     footer {
         bottom: 0px;
         margin-block-start: 1rem;
@@ -454,17 +472,39 @@ body {
         justify-content: center;
         background-color: color(Secundario);
         color: color(Primario);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
-    
-    
-    
+
+    .redesContainer {
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    .redes {
+        background-color: none;
+        width: 35px;
+        height: 35px;
+        align-self: center;
+        margin-right: 20px;
+        transition: 1s;
+
+    }
+
+    .redes:hover {
+        transform: scale(1.2);
+    }
+
+
     @media screen and (min-width: 767px) {
-        
+
         .animacionFondoMain {
             animation: fondoCambiante infinite 4s 0s;
             animation-timing-function: ease-in-out;
         }
-        
+
     }
-    
+
 }
