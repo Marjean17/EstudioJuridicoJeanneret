@@ -3,33 +3,24 @@
   margin: 0;
   padding: 0; }
 
-@keyframes fondoCambiante {
-  0% {
-    background: radial-gradient(#bbac46, beige); }
-  50% {
-    background: beige; }
-  100% {
-    background: radial-gradient(#bbac46, beige); } }
-
 @font-face {
   font-family: "OldLondon";
   src: url("../fonts/OldLondon.ttf"); }
 
 body {
-  background-color: beige;
+  background-color: white;
   display: grid;
-  grid-template-rows: 23vh auto 10vh;
+  grid-template-rows: 23vh auto 23vh;
   height: 100vh;
-  font-size: small;
-  /* Clases y etiquetas de la página CONTACTO */ }
+  font-size: small; }
   @media screen and (min-width: 767px) {
     body {
       font-size: medium;
-      grid-template-rows: 14vh auto 10vh; } }
+      grid-template-rows: 14vh auto 14vh; } }
   body header {
     position: sticky;
     top: 0px;
-    background-color: beige;
+    background-color: white;
     z-index: 1020; }
     body header .aMenu {
       text-decoration: none;
@@ -40,7 +31,7 @@ body {
       transition-duration: 1s; }
     body header .aMenu:hover {
       transform: scale(1.1);
-      background-color: #bbac46;
+      background-color: #151560;
       border-radius: 10px;
       color: white; }
     body header .imgMenu {
@@ -53,29 +44,36 @@ body {
     body header audio {
       width: 9rem;
       height: 1rem;
-      background-color: beige; }
+      background-color: white; }
+    body header .tituloMain {
+      padding: 2rem 0 2rem 0;
+      color: white;
+      background: radial-gradient(#457b9d, #151560);
+      margin: 0px;
+      padding: 15px 20px;
+      border: solid 1px none;
+      text-align: justify; }
   body main {
-    margin: 0 1rem 0 1rem;
-    background-color: beige;
+    margin: 3rem 1rem 1rem 0;
+    background-color: #457b9d;
     box-shadow: 10px 10px 10px grey;
     /* Clases y etiquetas de la página INDEX */
     /* Clases y etiquetas de la página AREAS DE PRACTICA */
     /* Clases y etiquetas de la página ACTUALIDAD */
-    /* Clases y etiquetas de la página Equipo */ }
-    body main h2 {
-      padding: 2rem 0 2rem 0; }
+    /* Clases y etiquetas de la página Equipo */
+    /* Clases y etiquetas de la página CONTACTO */ }
     body main img {
       width: auto;
       height: auto;
       border-radius: 10px;
       position: relative; }
     body main .nombreEstudio {
-      color: #bbac46;
+      color: black;
       margin: 2rem;
       text-align: center;
       white-space: pre-line; }
     body main .spanNombreEstudio {
-      font-family: "oldLondon";
+      font-family: "Cardinal";
       font-size: 5rem;
       line-height: 0.8; }
     body main .divIndex {
@@ -88,12 +86,14 @@ body {
         grid-area: Descripción1;
         margin: 10px;
         text-align: justify;
-        font-style: italic; }
+        font-style: italic;
+        color: white; }
       body main .divIndex #descripcionEstudio2 {
         grid-area: Descripción2;
         margin: 10px;
         text-align: justify;
-        font-style: italic; }
+        font-style: italic;
+        color: white; }
       body main .divIndex #fotoBibliotecaIndex {
         grid-area: FotoIndex;
         width: 80%;
@@ -119,26 +119,21 @@ body {
             width: 90%;
             height: 100vh;
             margin: 10px; } }
-    body main .tituloAreasDePractica {
-      color: #bbac46;
-      background-color: rgba(0, 0, 0, 0.459);
-      margin: 20px;
-      padding: 15px 20px;
-      border: solid 1px none;
-      text-align: justify; }
     body main .tituloDeAreaDePractica {
       height: 90px;
       text-align: start; }
     body main .descripcionDeAreaDePractica {
       margin-top: 30px; }
     body main .areaDePractica {
-      background-color: rgba(187, 172, 70, 0.5);
-      margin: 20px 40px 20px 20px;
+      background-color: #151560;
+      margin: 60px 40px 20px 20px;
       padding: 15px 20px;
-      border: solid 1px rgba(0, 0, 0, 0.685);
+      border: solid 3px #457b9d;
+      border-radius: 15px;
       text-align: justify;
       justify-content: space-between;
-      font-size: x-small; }
+      font-size: x-small;
+      color: white; }
     @media screen and (min-width: 767px) {
       body main .mainAreaDePractica {
         display: flex;
@@ -161,23 +156,27 @@ body {
       height: 900px; }
     body main .descripcionActualidad {
       text-align: justify;
-      margin: 0 10px 0 10px; }
+      margin: 60px 20px 0 20px;
+      color: white; }
     body main .tableActualidad {
       margin-top: 5vh;
       padding: 10px;
       max-width: 90vh;
+      background-color: #151560;
+      color: white;
       align-items: center;
       text-align: left;
       box-shadow: 10px 10px 20px grey; }
-    body main .paresDistintos tr:nth-child(odd) {
-      background-color: azure; }
     body main .tdLinkActualidad {
       text-decoration: none;
-      color: blue;
+      color: white;
+      background-color: #457b9d;
+      padding: 1px;
+      margin: 5px;
       font-size: 1rem; }
-    body main .tdLinkActualidad:hover {
-      box-shadow: 10px 10px 20px grey;
-      border-radius: 3px; }
+    body main .paresDistintos tr:nth-child(odd) {
+      background-color: white;
+      color: black; }
     body main .grillaEquipo {
       display: block;
       display: grid;
@@ -219,16 +218,18 @@ body {
           grid-template-areas: "tituloSocios tituloSocios tituloSenior tituloSenior" "socio1 socio2 senior1 senior2" "tituloJunior tituloJunior tituloColab tituloColab" "junior . colab .";
           gap: 5px; } }
     body main .descripcionEquipo {
-      margin: 20px;
-      text-align: justify; }
+      margin: 60px 20px 0 20px;
+      text-align: justify;
+      color: white; }
     body main .miembro {
       width: auto;
       height: auto;
-      background-color: rgba(118, 214, 238, 0.948);
+      background-color: #151560;
       margin: 20px 0px 20px 0px;
       padding: 5px;
+      color: white;
       text-align: justify;
-      box-shadow: 20px 20px 35px grey; }
+      box-shadow: 5px 5px 10px white; }
     body main .miembroFoto {
       width: 96%;
       height: auto;
@@ -241,34 +242,42 @@ body {
       align-self: flex-end; }
     body main .fondoCard_footer {
       align-self: flex-end; }
-  body .descripcionContacto {
-    margin: 20px;
-    text-align: justify; }
-  body .contenedorFotosyForm {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; }
-  body .fotoFrenteEstudio {
-    width: 50vh;
-    margin: 5px; }
-  body .fotoRecepcionEstudio {
-    width: 50vh;
-    margin: 5px; }
-  body .divForm {
-    display: inline-block;
-    margin: 5px; }
-  body .formContacto {
-    width: 50vh; }
-  body .inputForm, body .inputForm_fondoGris {
-    width: 50vh;
-    margin: 2px; }
-  body .inputForm_fondoGris {
-    background-color: #f2f5f5; }
+    body main .descripcionContacto {
+      margin: 60px 20px 20px 20px;
+      text-align: justify;
+      color: white; }
+    body main .contenedorFotosyForm {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; }
+    body main .fotoFrenteEstudio {
+      width: 50vh;
+      margin: 5px;
+      border: solid 1px #151560; }
+    body main .fotoRecepcionEstudio {
+      width: 50vh;
+      margin: 5px;
+      border: solid 1px #151560; }
+    body main .divForm {
+      display: inline-block;
+      margin: 5px;
+      padding: 20px;
+      border-radius: 15px;
+      background-color: #151560; }
+    body main .formContacto {
+      width: 50vh; }
+    body main .inputForm, body main .inputForm_fondoGris {
+      width: 50vh;
+      margin: 2px; }
+    body main .inputForm_fondoGris {
+      background-color: #f2f5f5; }
   body footer {
     bottom: 0px;
     margin-block-start: 1rem;
     padding: 1rem;
-    justify-content: center; }
+    justify-content: center;
+    background-color: #151560;
+    color: white; }
   @media screen and (min-width: 767px) {
     body .animacionFondoMain {
       animation: fondoCambiante infinite 4s 0s;

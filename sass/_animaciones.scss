@@ -1,19 +1,21 @@
-        @keyframes fondoCambiante {
-            0% {
-                background: radial-gradient(rgb(187, 172, 70), beige)
-            }
+        // @keyframes fondoCambiante {
+        //     0% {
+        //         background: radial-gradient(color(Terciario), color(Secundario))
+        //     }
 
-            ;
+        //     ;
 
-            50% {
-                background: beige
-            }
+        //     50% {
+        //         background: rgb(31, 31, 255)
+        //     }
 
-            ;
+        //     ;
 
-            100% {
-                background: radial-gradient(rgb(187, 172, 70), beige)
-            }
+        //     100% {
+        //         background: radial-gradient(color(Terciario), color(Secundario))
+        //     }
 
-            ;
-        }
+        //     ;
+        // }
+        
+        // Dejo la animación comentada atento el resultado visual no me termina de convencer

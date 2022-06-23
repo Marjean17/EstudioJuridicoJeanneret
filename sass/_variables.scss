@@ -1,6 +1,11 @@
-$mapaColores:(Primario: beige,
-    Secundario: rgb(187, 172, 70),
-    Terciario: rgba(179, 176, 70, 0.448),
-    FondoBox: rgba(118, 214, 238, 0.948),
-    Links: blue,
+// $mapaColores:(Primario: beige,
+//     Secundario: rgb(187, 172, 70),
+//     Terciario: rgba(179, 176, 70, 0.448),
+//     FondoBox: rgba(118, 214, 238, 0.948),
+//     Links: blue,
+//     Transparent: rgba(0, 0, 0, 0));
+
+$mapaColores:(Primario: rgb(255, 255, 255),
+    Secundario: rgb(21, 21, 96),
+    Terciario: rgb(69, 123, 157),
     Transparent: rgba(0, 0, 0, 0));
